@@ -1,0 +1,267 @@
+{
+  "summary": {
+    "total": 25,
+    "toxic": 14,
+    "safe": 11
+  },
+  "results": [
+    {
+      "id": "S01",
+      "category": "Formal Safe (English)",
+      "text": "Good morning team, let's sync up at 11 AM for the daily standup.",
+      "flagged": false,
+      "detected_tags": [],
+      "top_score": "TOXIC: 9.9%"
+    },
+    {
+      "id": "S02",
+      "category": "Formal Safe (Hindi Devanagari)",
+      "text": "नमस्ते सर, क्या आप मुझे आज की बैठक का एजेंडा भेज सकते हैं?",
+      "flagged": false,
+      "detected_tags": [],
+      "top_score": "TOXIC: 18.5%"
+    },
+    {
+      "id": "S03",
+      "category": "Casual Safe (Hinglish)",
+      "text": "Bhai project ka status kya hai? Sab thik chal raha hai na?",
+      "flagged": false,
+      "detected_tags": [],
+      "top_score": "TOXIC: 12.9%"
+    },
+    {
+      "id": "C01",
+      "category": "Compliment (English)",
+      "text": "You did an incredible job on the presentation today, keep it up!",
+      "flagged": false,
+      "detected_tags": [],
+      "top_score": "TOXIC: 12.4%"
+    },
+    {
+      "id": "C02",
+      "category": "Compliment (Hinglish 'hoshiyar')",
+      "text": "tum bahut hoshiyar aur samajhdar ho, tumne problem solve kar di.",
+      "flagged": false,
+      "detected_tags": [],
+      "top_score": "TOXIC: 19.8%"
+    },
+    {
+      "id": "C03",
+      "category": "Compliment (Hinglish 'hero')",
+      "text": "bhai tu mera hero hai, tera kaam sach mein lajawab hai!",
+      "flagged": false,
+      "detected_tags": [],
+      "top_score": "TOXIC: 20.5%"
+    },
+    {
+      "id": "C04",
+      "category": "Compliment (Hindi Devanagari)",
+      "text": "आज का कार्यक्रम बहुत ही शानदार और प्रेरणादायक था।",
+      "flagged": false,
+      "detected_tags": [],
+      "top_score": "TOXIC: 0.7%"
+    },
+    {
+      "id": "M01",
+      "category": "Mild Slang (Hinglish)",
+      "text": "tu ek number ka gadha hai, kuch samajh nahi aata tujhe.",
+      "flagged": true,
+      "detected_tags": [
+        "TOXIC(71%)",
+        "INSULT(71%)",
+        "IDENTITY_HATE(92%)"
+      ],
+      "top_score": "IDENTITY_HATE: 92.3%"
+    },
+    {
+      "id": "M02",
+      "category": "Dismissive (English)",
+      "text": "stop asking dumb questions and let me work in peace.",
+      "flagged": false,
+      "detected_tags": [],
+      "top_score": "TOXIC: 15.4%"
+    },
+    {
+      "id": "M03",
+      "category": "Dismissive (Hindi Devanagari)",
+      "text": "तुम बहुत बड़े बेवकूफ हो, तुमसे कुछ नहीं होने वाला चुप बैठो।",
+      "flagged": true,
+      "detected_tags": [
+        "TOXIC(51%)",
+        "INSULT(56%)"
+      ],
+      "top_score": "INSULT: 56.0%"
+    },
+    {
+      "id": "P01",
+      "category": "Severe Obscenity (English)",
+      "text": "fuck you you absolute motherfucking bastard, go to hell.",
+      "flagged": true,
+      "detected_tags": [
+        "TOXIC(88%)",
+        "SEVERE_TOXIC(99%)",
+        "OBSCENE(94%)",
+        "INSULT(78%)"
+      ],
+      "top_score": "SEVERE_TOXIC: 98.8%"
+    },
+    {
+      "id": "P02",
+      "category": "Profanity + Threat (Hinglish)",
+      "text": "bhenchod bakwas mat kar warna tera muh tod dunga harami saale.",
+      "flagged": true,
+      "detected_tags": [
+        "TOXIC(87%)",
+        "SEVERE_TOXIC(97%)",
+        "OBSCENE(90%)",
+        "THREAT(93%)",
+        "INSULT(74%)",
+        "IDENTITY_HATE(81%)"
+      ],
+      "top_score": "SEVERE_TOXIC: 97.4%"
+    },
+    {
+      "id": "P03",
+      "category": "Severe Obscenity (Hindi Devanagari)",
+      "text": "मादरचोद कमीने कुत्ते तेरी औकात क्या है मुझसे बात करने की भाग यहाँ से।",
+      "flagged": true,
+      "detected_tags": [
+        "TOXIC(78%)",
+        "SEVERE_TOXIC(89%)",
+        "OBSCENE(82%)",
+        "INSULT(78%)"
+      ],
+      "top_score": "SEVERE_TOXIC: 88.9%"
+    },
+    {
+      "id": "P04",
+      "category": "Cyberbullying (Hinglish)",
+      "text": "saale chutiye tera dimaag kharab ho gaya hai kya nalayak insaan.",
+      "flagged": true,
+      "detected_tags": [
+        "TOXIC(86%)",
+        "SEVERE_TOXIC(95%)",
+        "OBSCENE(86%)",
+        "INSULT(83%)",
+        "IDENTITY_HATE(87%)"
+      ],
+      "top_score": "SEVERE_TOXIC: 94.5%"
+    },
+    {
+      "id": "T01",
+      "category": "Violent Threat (English)",
+      "text": "I will hunt you down and kill you and your entire family.",
+      "flagged": true,
+      "detected_tags": [
+        "TOXIC(66%)",
+        "SEVERE_TOXIC(81%)",
+        "THREAT(100%)"
+      ],
+      "top_score": "THREAT: 99.6%"
+    },
+    {
+      "id": "T02",
+      "category": "Violent Threat (Hinglish)",
+      "text": "mai tera murder kar dunga agar tune ek aur baar call kiya toh.",
+      "flagged": true,
+      "detected_tags": [
+        "TOXIC(66%)",
+        "SEVERE_TOXIC(74%)",
+        "THREAT(99%)"
+      ],
+      "top_score": "THREAT: 99.4%"
+    },
+    {
+      "id": "T03",
+      "category": "Death Threat (Hindi Devanagari)",
+      "text": "तुझे घर से निकाल कर गोली मार दूंगा, आज रात तेरा आखिरी दिन है।",
+      "flagged": true,
+      "detected_tags": [
+        "TOXIC(70%)",
+        "SEVERE_TOXIC(91%)",
+        "THREAT(99%)"
+      ],
+      "top_score": "THREAT: 99.3%"
+    },
+    {
+      "id": "H01",
+      "category": "Religious Hate (English)",
+      "text": "all people belonging to your religion are dirty terrorists and scum of the earth.",
+      "flagged": true,
+      "detected_tags": [
+        "TOXIC(86%)",
+        "OBSCENE(91%)",
+        "INSULT(82%)",
+        "IDENTITY_HATE(94%)"
+      ],
+      "top_score": "IDENTITY_HATE: 93.8%"
+    },
+    {
+      "id": "H02",
+      "category": "Casteist Hate (Hinglish)",
+      "text": "tumhari jaati aur community ke log hamesha se chor aur ghatiya rahe hain.",
+      "flagged": true,
+      "detected_tags": [
+        "TOXIC(66%)",
+        "INSULT(72%)",
+        "IDENTITY_HATE(98%)"
+      ],
+      "top_score": "IDENTITY_HATE: 98.0%"
+    },
+    {
+      "id": "H03",
+      "category": "Communal Hate (Hindi Devanagari)",
+      "text": "इस धर्म के सारे लोग देश के गद्दार हैं, इन सबको देश से बाहर निकाल देना चाहिए।",
+      "flagged": true,
+      "detected_tags": [
+        "TOXIC(55%)",
+        "INSULT(59%)"
+      ],
+      "top_score": "INSULT: 58.9%"
+    },
+    {
+      "id": "X01",
+      "category": "Misogyny (English)",
+      "text": "women belong only in the kitchen, stop trying to act smart and do your chores.",
+      "flagged": false,
+      "detected_tags": [],
+      "top_score": "TOXIC: 4.5%"
+    },
+    {
+      "id": "X02",
+      "category": "Misogyny (Hinglish)",
+      "text": "aurton ka kaam sirf ghar sambhalna hai, zyada dimaag mat chalao aur chup raho.",
+      "flagged": true,
+      "detected_tags": [
+        "IDENTITY_HATE(90%)"
+      ],
+      "top_score": "IDENTITY_HATE: 90.0%"
+    },
+    {
+      "id": "X03",
+      "category": "Misogyny (Hindi Devanagari)",
+      "text": "लड़कियों में दिमाग नहीं होता, उन्हें सिर्फ घर का काम करना चाहिए।",
+      "flagged": false,
+      "detected_tags": [],
+      "top_score": "TOXIC: 12.8%"
+    },
+    {
+      "id": "R01",
+      "category": "Sarcasm (Hinglish)",
+      "text": "wah bhai kya dimaag paya hai, aisi bewakoofi bhari baatein sirf tum hi kar sakte ho.",
+      "flagged": true,
+      "detected_tags": [
+        "IDENTITY_HATE(84%)"
+      ],
+      "top_score": "IDENTITY_HATE: 83.9%"
+    },
+    {
+      "id": "R02",
+      "category": "Passive-Aggressive (English)",
+      "text": "oh brilliant idea, let's just ruin the entire project because you can't read instructions.",
+      "flagged": false,
+      "detected_tags": [],
+      "top_score": "OBSCENE: 13.7%"
+    }
+  ]
+}
