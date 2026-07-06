@@ -1,0 +1,76 @@
+spring:
+  application:
+    name: safechat-backend
+    
+  profiles:
+    active: dev
+
+---
+# Development Profile (Zero-Setup Database)
+spring:
+  config:
+    activate:
+      on-profile: dev
+  
+  # Relational Database: H2 Embedded
+  datasource:
+    url: jdbc:h2:mem:safechatdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+
+  # Embedded MongoDB configuration
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: safechat
+
+de:
+  flapdoodle:
+    mongodb:
+      embedded:
+        version: 6.0.4
+
+---
+# Production Profile (Real PostgreSQL & MongoDB)
+spring:
+  config:
+    activate:
+      on-profile: prod
+      
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:5432/${DB_NAME:safechat}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      
+  data:
+    mongodb:
+      uri: mongodb://${MONGO_USER}:${MONGO_PASS}@${MONGO_HOST:localhost}:27017/safechat
+
+---
+# SafeChat Application Properties
+safechat:
+  ml-service:
+    url: http://localhost:8000
+    
+  jwt:
+    secret: a-very-secret-key-that-should-be-in-env-vars-and-at-least-256-bits-long
+    expirationMs: 86400000
+
+logging:
+  level:
+    com.safechat: DEBUG
+    org.springframework.web: INFO
+    org.springframework.security: INFO
