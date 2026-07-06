@@ -1,0 +1,62 @@
+services:
+  moderation-api:
+    build:
+      context: .
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - redis
+      - mongodb
+      - ml-service
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://safety_user:safety_password@postgres:5432/safety_platform
+      - REDIS_URL=redis://redis:6379/0
+      - MONGODB_URL=mongodb://mongodb:27017
+      - ML_SERVICE_URL=http://ml-service:8000
+
+
+  ml-service:
+    build:
+      context: ./ml-service
+    env_file:
+      - ./ml-service/.env
+    ports:
+      - "8001:8000"
+    depends_on:
+      - mongodb
+    volumes:
+      - ./ml-service/checkpoints:/app/checkpoints
+    environment:
+      - SAFECHAT_MONGODB_URL=mongodb://mongodb:27017
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: safety_platform
+      POSTGRES_USER: safety_user
+      POSTGRES_PASSWORD: safety_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  mongodb:
+    image: mongo:7-jammy
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  postgres_data:
+  mongodb_data:
+
+
